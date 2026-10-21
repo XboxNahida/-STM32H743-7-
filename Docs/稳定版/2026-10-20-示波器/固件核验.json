@@ -1,0 +1,183 @@
+{
+  "任务": "FFT默认dBV、线性RMS、独立视图与真实频点细节",
+  "日志": [
+    "tmp/scope_fft_detail_keil.log",
+    "tmp/scope_fft_detail_core.log",
+    "tmp/scope_fft_detail_ui.log"
+  ],
+  "错误": 0,
+  "警告": 0,
+  "主机回归": 12,
+  "驱动断言": 139813,
+  "内存": [
+    {
+      "最大": 2097152,
+      "使用": 1551404,
+      "区域": "ER_IROM1"
+    },
+    {
+      "最大": 131072,
+      "使用": 56660,
+      "区域": "RW_IRAM1"
+    },
+    {
+      "最大": 524288,
+      "使用": 449944,
+      "区域": "RW_IRAM2"
+    }
+  ],
+  "DMA": [
+    {
+      "地址": "0x240097c0",
+      "符号": "g_adc_buffer",
+      "字节": 65536
+    },
+    {
+      "地址": "0x240197c0",
+      "符号": "g_dac_buffer",
+      "字节": 2048
+    }
+  ],
+  "UI全局字节": 34592,
+  "共享SDRAM字节": 507908,
+  "覆盖": [
+    "FFT视图与时域XY隔离",
+    "1%弱谐波在dBV可见",
+    "1000mV峰值显示707.11mV RMS和-3.01dBV",
+    "df=Fs/N实际绘制文字",
+    "放大约56像素每bin插值斜坡",
+    "宽频单bin保峰及平移一次",
+    "NaN Inf负值与零谱安全",
+    "运行期间切模式复位不重启ADC",
+    "中文数学页和双谱实际渲染"
+  ],
+  "固件": {
+    "路径": "C:\\Test_Program\\Keil5\\STM32\\PPC\\MDK-ARM\\H743_LCD_Keil5\\H743_LCD_Keil5.hex",
+    "时间": "2026-10-20T17:54:03.6227125+08:00",
+    "SHA256": "05992B1D89575C5FA4AA7F350FA601018833834CB7040FDAA2DA1D3F58584D0A",
+    "字节": 4374884
+  },
+  "源码": [
+    {
+      "SHA256": "FAD75CC1C0F07D99E2DC851F6D35C9B2D02171401575660FCBCF3B6BF1F0C4AA",
+      "路径": "lvgl_GUI/custom\\oscilloscope_ui_private.h"
+    },
+    {
+      "SHA256": "204D1A881D630B2152571B326307E89B39D9C07DEB23468E233B21B84CA4D272",
+      "路径": "lvgl_GUI/custom\\oscilloscope_ui.h"
+    },
+    {
+      "SHA256": "73A84C2707805FA44BC64305379E7E3703595E2BE735B83408D38A802EBDA8DB",
+      "路径": "lvgl_GUI/custom\\oscilloscope_ui.c"
+    },
+    {
+      "SHA256": "24F8207D59B6FE070C745EB0287C0DB34140FD483DC58F8227B07855DD539077",
+      "路径": "lvgl_GUI/custom\\oscilloscope_format.h"
+    },
+    {
+      "SHA256": "5F19F3284ABE67A6D12FE65E94BA0806E14684E89B2A90E6C8096E8157199207",
+      "路径": "lvgl_GUI/custom\\oscilloscope_files.c"
+    },
+    {
+      "SHA256": "617F85403B3019CBE43A44FC1D6101C4EDB4300604DBEE712CDE4B72098258C6",
+      "路径": "lvgl_GUI/custom\\oscilloscope_controls.c"
+    },
+    {
+      "SHA256": "92D98D7D8BFE5615F9064B3EC171BA078DFF4F6DA98AF4975F7020265855DB65",
+      "路径": "Core/Application\\Src\\scope_reference_frequency.c"
+    },
+    {
+      "SHA256": "C55828491014F62D70543F2F0E7144BCA7EE4E3C40D4E40825C8253574A94742",
+      "路径": "Core/Application\\Src\\scope_reference_dsp.c"
+    },
+    {
+      "SHA256": "816976D2BF5C9B438AFE227F6C655FB44078C861E3EA1E3F5D94C3BB5F9D0792",
+      "路径": "Core/Application\\Src\\oscilloscope_zoom.c"
+    },
+    {
+      "SHA256": "76FED43C49A9B5336117D5EBB654645C46D0814DCF4E1BB4D2003558676E14D3",
+      "路径": "Core/Application\\Src\\oscilloscope_workspace.c"
+    },
+    {
+      "SHA256": "6DE5B86B191B39889FB05CBEF97BF490ACA87F3DAA5DEFC60BE85488040D2860",
+      "路径": "Core/Application\\Src\\oscilloscope_storage.c"
+    },
+    {
+      "SHA256": "5118A5C421FD3AFD5C8D1324248836F747AFDF517765BE101505F143E1C321E0",
+      "路径": "Core/Application\\Src\\oscilloscope_session.c"
+    },
+    {
+      "SHA256": "D0885553C9C9F9B1954C8E934A9F4AA6D82B7F92F3A1ADF6CDD85B305B3AD151",
+      "路径": "Core/Application\\Src\\oscilloscope_core.c"
+    },
+    {
+      "SHA256": "196EA1A1F8662E0CA2955B2166F61C0F167CE76B0253541481477CD4A2BA5CA1",
+      "路径": "Core/Application\\Src\\oscilloscope_accurate.c"
+    },
+    {
+      "SHA256": "DC4BDEF173D052270DACB23DC62FFF582D74ABFBAE522615122C31F360877F31",
+      "路径": "Core/Peripheral\\Src\\oscilloscope_timing.c"
+    },
+    {
+      "SHA256": "B65AEA69374D51CB2022D00406F14BAD60A90F5BE49575C1898D530FEDB4C775",
+      "路径": "Core/Peripheral\\Src\\oscilloscope_phy.c"
+    },
+    {
+      "SHA256": "5DF709FA057626B76151CAB25C8C084E9CDBF0712A25299F656A398DF7343DD1",
+      "路径": "Core/Peripheral\\Src\\oscilloscope_driver.c"
+    },
+    {
+      "SHA256": "8D35133A563750914AB5A565B802A0D5257B712E1A266ED35EB7E5CACDD3FCB9",
+      "路径": "lvgl_GUI/custom\\assets\\oscilloscope_icon.h"
+    },
+    {
+      "SHA256": "A537334F3B5E3BBE36563529AECA3E5F48DDA60A052022FE1F97E3F60442AB32",
+      "路径": "Core/Application\\Inc\\scope_reference_frequency.h"
+    },
+    {
+      "SHA256": "99A94EC22A56B3B32519C6E7C4107A51C34F8B81B600C1F84FEF7F7F52A7334B",
+      "路径": "Core/Application\\Inc\\scope_reference_dsp.h"
+    },
+    {
+      "SHA256": "2663A3491BE1A2C07BDD41BEE935F1D32405ADAB51E07A30E39CACA5D4143E25",
+      "路径": "Core/Application\\Inc\\oscilloscope_zoom.h"
+    },
+    {
+      "SHA256": "8CEA4036CC66F7EDDA6DD69F04668C0BC141FC53E9D1AB88DC48DF0334B801DD",
+      "路径": "Core/Application\\Inc\\oscilloscope_workspace.h"
+    },
+    {
+      "SHA256": "C19ABFC380F4DBE6DA79F8BE22BB27171A941F7C0A8C609EAD637075C9AE1C8A",
+      "路径": "Core/Application\\Inc\\oscilloscope_storage.h"
+    },
+    {
+      "SHA256": "EEFF990CF5E4B52B4CCFE15C32F118FE868C32C17C851D7FC72F5B504DB763B8",
+      "路径": "Core/Application\\Inc\\oscilloscope_session.h"
+    },
+    {
+      "SHA256": "4E69C9027FE632DFA735AB77884FA90049675667866C48BA93F1CDC3731C94FA",
+      "路径": "Core/Application\\Inc\\oscilloscope_core.h"
+    },
+    {
+      "SHA256": "0F499855426472394337F2FA7B713B5E35C9FE0A98498FB6C034546CA56E2B37",
+      "路径": "Core/Application\\Inc\\oscilloscope_accurate.h"
+    },
+    {
+      "SHA256": "32F923C963E69A4FE9B79CAF7A52E27AECB4DB6491FA301C35F1A33E415B6A27",
+      "路径": "Core/Peripheral\\Inc\\oscilloscope_timing.h"
+    },
+    {
+      "SHA256": "D017B9B77632B7969F4D8F1EBCD0A9ED30A4F19A2089F56E99F5B02BA39ECB57",
+      "路径": "Core/Peripheral\\Inc\\oscilloscope_phy.h"
+    },
+    {
+      "SHA256": "B0F0EFF5057C00A1B9A9B4AAB220EF7613AE0BC7320FDBD39365228301B885CD",
+      "路径": "Core/Peripheral\\Inc\\oscilloscope_io.h"
+    },
+    {
+      "SHA256": "224043E45BFEE04C79AEC55FEB757A82F4943E21B105FD276086E8F72F0FD308",
+      "路径": "Core/Peripheral\\Inc\\oscilloscope_driver.h"
+    }
+  ],
+  "实机": "用户确认基线DAC、双路ADC及其它图正常。本轮未烧录；需上板验证dBV弱谐波、线性单位、双路主峰及df、触摸缩放复位和ADC加DAC持续运行。插值不提高真实分辨率；25Hz重绘性能与实际模拟幅值仍需实机验收。"
+}

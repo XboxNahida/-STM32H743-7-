@@ -1,0 +1,46 @@
+; *************************************************************
+; *** 全内存散列文件 - STM32H743IIT6 全部内存区域            ***
+; *** 共计RAM: ITCM(64K)+DTCM(128K)+AXI(512K)+SRAM1~4+备份   ***
+; *** 总计约 1060KB RAM + 2MB Flash                           ***
+; ***                                                        ***
+; *** 布局策略:                                               ***
+; ***   DTCM      -> 栈+堆+关键变量 (CPU零等待,不可DMA)       ***
+; ***   AXI SRAM  -> LVGL缓冲 120KB + 通用数据 (~392KB)       ***
+; ***   SRAM1~4   -> 外设数据溢出区                           ***
+; *************************************************************
+
+LR_IROM1 0x08000000 0x00200000  {    ; Flash 2MB 加载区
+  ER_IROM1 0x08000000 0x00200000  {  ; Flash 执行区
+   *.o (RESET, +First)
+   *(InRoot$$Sections)
+   .ANY (+RO)
+   .ANY (+XO)
+  }
+  RW_ITCM 0x00000000 0x00010000  {   ; ITCM 指令紧耦合 64KB (不可DMA)
+   .ANY (+RW +ZI)
+  }
+  RW_DTCM 0x20000000 0x00020000  {   ; DTCM 数据紧耦合 128KB (不可DMA,栈+堆+变量)
+   .ANY (+RW +ZI)
+  }
+  RW_LVGL_BUF 0x24000000 0x0001E000  {  ; LVGL显示缓冲 120KB (AXI SRAM, DMA可达)
+   *(.lvgl_disp_buf)
+  }
+  RW_AXI_SRAM 0x2401E000 0x00062000  {  ; AXI SRAM 通用区 ~392KB (D1域, DMA可达)
+   .ANY (+RW +ZI)
+  }
+  RW_SRAM1 0x30000000 0x00020000  {   ; SRAM1 (D2域) 128KB
+   .ANY (+RW +ZI)
+  }
+  RW_SRAM2 0x30020000 0x00020000  {   ; SRAM2 (D2域) 128KB
+   .ANY (+RW +ZI)
+  }
+  RW_SRAM3 0x30040000 0x00008000  {   ; SRAM3 (D2域) 32KB
+   .ANY (+RW +ZI)
+  }
+  RW_SRAM4 0x38000000 0x00010000  {   ; SRAM4 (D3域) 64KB
+   .ANY (+RW +ZI)
+  }
+  RW_BKPSRAM 0x38800000 0x00001000  {  ; 备份SRAM (D3域) 4KB
+   .ANY (+RW +ZI)
+  }
+}

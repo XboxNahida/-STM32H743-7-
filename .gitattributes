@@ -1,0 +1,14 @@
+# 固件、外置存储资源及发布校验文件必须保留原始字节
+*.hex binary
+*.bin binary
+*.BIN binary
+*.FON binary
+*.pdf binary
+*.ttf binary
+*.otf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.log -text
+*.json -text
+Firmware/SHA256SUMS.txt -text

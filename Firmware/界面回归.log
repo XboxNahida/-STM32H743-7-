@@ -1,0 +1,1 @@
+PASS oscilloscope_ui: continuous after single, keyboard toggle, cursor/layout, dual FFT, locked gestures, measurement lifetime, auto 1Hz/200kHz, independent CH1/CH2, CH2 cursors/trigger, noise/DC auto fit, final-rate noise centering, dual refresh with skipped DMA, dual drag/re-enable, ADC failure stage, pinch boundaries/restart

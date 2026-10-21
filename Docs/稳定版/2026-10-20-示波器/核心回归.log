@@ -1,0 +1,23 @@
+PHY隔离：识别/读回失败/复位中拒绝/恢复重试通过
+PASS oscilloscope_workspace bytes=507908
+PASS oscilloscope_zoom
+PASS oscilloscope_core
+PASS oscilloscope_timing failures=0
+PASS oscilloscope_driver checks=139813 failures=0
+PASS oscilloscope_session
+PASS oscilloscope_storage
+sine 17321.714844 error 0.015625 Hz
+harmonic 17321.722656 error 0.023438 Hz
+square 17320.609375 error -1.089844 Hz
+noise 17322.556641 error 0.857422 Hz
+sine 1M 17321.490234 error -0.208984 Hz
+variable n=512 f=1.000005 analysis=512
+variable n=3000 f=200000.468750 analysis=2048
+variable n=8192 f=200000.234375 analysis=8192
+accurate PASS
+PASS adc_measurement_service
+PASS adc_mapping_contract
+OK test=resource_manager failures=0
+
+PASS resource_manager
+已通过 12 项主机测试（严格警告、短枚举）；仍需Keil目标构建和实机验收。
